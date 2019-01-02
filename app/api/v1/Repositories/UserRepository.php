@@ -84,6 +84,30 @@ class UserRepository
     }
 
 
+    /**
+     * Fetch a User using email
+     *
+     * @param int $email
+     *
+     * @return object $user
+     *
+     */
+    public function fetchAUserUsingEmail($email)
+    {
+
+        try {
+
+          // Fetch user with email from database
+          return $user = User::whereEmail($email)->first();
+
+        } catch (\Exception $e) {
+
+            return "Oops! Sorry there was an error. Please try again";
+
+        }
+
+    }
+
 }
 
 ?>

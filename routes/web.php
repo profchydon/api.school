@@ -26,6 +26,13 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('sendmail' , ['as' => 'sendMail', 'uses' => 'UserController@sendVerificationMail']);
     });
 
+    // Verifications route
+    Route::group(['prefix' => 'verifications'], function () {
+        Route::post('create' , 'VerificationController@create');
+        Route::post('update' , 'VerificationController@updateVerification');
+        Route::post('user/verify' , 'VerificationController@verifyUser');
+    });
+
 
 
 });
