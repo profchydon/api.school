@@ -26,6 +26,11 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('sendmail' , ['as' => 'sendMail', 'uses' => 'UserController@sendVerificationMail']);
     });
 
+    // Users route
+    Route::group(['prefix' => 'students'], function () {
+        Route::post('create' , ['as' => 'createStudent', 'uses' => 'StudentController@create']);
+    });
+
     // Verifications route
     Route::group(['prefix' => 'verifications'], function () {
         Route::post('create' , 'VerificationController@create');
@@ -38,6 +43,11 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('login' , 'AuthController@login');
         Route::post('password_reset' , 'AuthController@passwordReset');
         Route::get('password_reset' , 'AuthController@changePassword');
+    });
+
+    // Auth route
+    Route::group(['prefix' => 'fundingrequests'], function () {
+        Route::post('create' , 'FundingRequestController@create');
     });
 
 

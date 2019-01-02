@@ -18,15 +18,7 @@ class Student extends Model implements AuthenticatableContract, AuthorizableCont
      * @var array
      */
     protected $fillable = [
-        'country', 'state', 'city',
+        'user_id', 'country', 'state', 'city',
     ];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'api_key',
-    ];
 }

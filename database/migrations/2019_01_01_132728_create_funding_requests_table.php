@@ -14,8 +14,17 @@ class CreateFundingRequestsTable extends Migration
     public function up()
     {
         Schema::create('funding_requests', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->integer('student_id')->unsigned();
+          $table->string('title')->nullable();
+          $table->text('details')->nullable();
+          $table->string('image')->nullable();
+          $table->string('amount_needed')->nullable();
+          $table->string('amount_raised')->nullable();
+          $table->string('start_date')->nullable();
+          $table->string('end_date')->nullable();
+          $table->timestamps();
+          $table->foreign('student_id')->references('id')->on('students');
         });
     }
 

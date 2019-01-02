@@ -142,7 +142,7 @@ class AuthRepository
 
             $body = "Hi,
             Click on the link below to reset your password
-            http://localhost:8000/api/v1/auth/password_reset?email=$email&code=$code
+            http://localhost:8080/api/v1/auth/password_reset?email=$email&code=$code
             ";
 
             $sendMail = mail($email, $subject, $body , 'noreply@cotenant.com');

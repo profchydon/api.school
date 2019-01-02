@@ -18,7 +18,7 @@ class FundingRequest extends Model implements AuthenticatableContract, Authoriza
      * @var array
      */
     protected $fillable = [
-        'title', 'image', 'amount_needed', 'amount_received', 'details', 'end_date', 'start_date',
+        'student_id', 'title', 'image', 'amount_needed', 'amount_raised', 'details', 'end_date', 'start_date',
     ];
 
 }
