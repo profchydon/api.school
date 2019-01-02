@@ -33,6 +33,12 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('user/verify' , 'VerificationController@verifyUser');
     });
 
+    // Auth route
+    Route::group(['prefix' => 'auth'], function () {
+        Route::post('login' , 'AuthController@login');
+        Route::post('password_reset' , 'AuthController@passwordReset');
+        Route::get('password_reset' , 'AuthController@changePassword');
+    });
 
 
 });
