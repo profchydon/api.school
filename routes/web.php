@@ -26,9 +26,9 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('sendmail' , ['as' => 'sendMail', 'uses' => 'UserController@sendVerificationMail']);
     });
 
-    // Users route
-    Route::group(['prefix' => 'students'], function () {
-        Route::post('create' , ['as' => 'createStudent', 'uses' => 'StudentController@create']);
+    // Student route
+    Route::group(['prefix' => 'academicprofile'], function () {
+        Route::post('create' , ['as' => 'createStudent', 'uses' => 'AcademicProfileController@create']);
     });
 
     // Verifications route
@@ -45,9 +45,9 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::get('password_reset' , 'AuthController@changePassword');
     });
 
-    // Auth route
-    Route::group(['prefix' => 'fundingrequests'], function () {
-        Route::post('create' , 'FundingRequestController@create');
+    // Access Group route
+    Route::group(['prefix' => 'accessgroup'], function () {
+        Route::post('create' , 'AccessGroupController@create');
     });
 
 

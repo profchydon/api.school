@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateScholarshipsTable extends Migration
+class CreateScholarshipRequirementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateScholarshipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('scholarships', function (Blueprint $table) {
+        Schema::create('scholarship_requirements', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateScholarshipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scholarships');
+        Schema::dropIfExists('scholarship_requirements');
     }
 }

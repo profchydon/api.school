@@ -2,16 +2,15 @@
 
 namespace App\Api\v1\Repositories;
 
-use App\FundingRequest;
 use App\User;
-use App\Student;
+use App\AccessGroup;
 use Illuminate\Http\Request;
 use DB;
 
 /**
  *
  */
-class StudentRepository
+class AccessGroupRepository
 {
 
     public function create($request)
@@ -23,26 +22,25 @@ class StudentRepository
           DB::beginTransaction();
 
           // Create User
-          $student = Student::create([
-            'user_id' => $request->user_id,
-            'country' => $request->country,
-            'state' => $request->state,
-            'city' => $request->city,
+          $access_group = AccessGroup::create([
+            'name' => $request->name,
+            'resources' => $request->resources,
+            'editable' => $request->editable,
           ]);
 
-          if (!$student) {
+          if (!$access_group) {
 
             // If User isn't created, rollback database to initial state
             DB::rollback();
 
-            return $student = "Oops! Sorry there was an error. Please try again";
+            return $access_group = "Oops! Sorry there was an error. Please try again";
 
           }else {
 
             // If User is created, commit transaction to the database
             DB::commit();
 
-            return $student;
+            return $access_group;
 
           }
 

@@ -3,33 +3,31 @@
 namespace App\Api\v1\Controllers;
 
 use Illuminate\Http\Request;
-use App\Api\v1\Repositories\StudentRepository;
+use App\Api\v1\Repositories\AccessGroupRepository;
 
 
 
-class StudentController extends Controller
+class AccessGroupController extends Controller
 {
 
   /**
    *
    * @var object
    */
-  private $student;
+  private $access_group;
 
 
   /**
    * Class constructor
    */
-  public function __construct(StudentRepository $student)
+  public function __construct(AccessGroupRepository $access_group)
   {
-      // Inject AuthRepository Class into AuthController
-      $this->student = $student;
+      $this->access_group = $access_group;
 
   }
 
 
   /**
-   * Create a  new Verification
    *
    * @param object $request
    *
@@ -41,14 +39,14 @@ class StudentController extends Controller
 
       try {
 
-          $student = $this->student->create($request);
+          $access_group = $this->access_group->create($request);
 
           // Create a custom array as response
           $response = [
               "status" => "success",
               "code" => 200,
               "message" => "Ok",
-              "data" => $student
+              "data" => $access_group
           ];
 
           // return the custom in JSON format

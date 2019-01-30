@@ -29,7 +29,7 @@ class UserRepository
             $emailExist = User::whereEmail($request->email)->first();
 
             // Check if phone number exist
-            $phoneNumberExist = User::where('phone_number' , $request->phone_number)->first();
+            $phoneNumberExist = User::where('phone' , $request->phone)->first();
 
             if ($emailExist) {
 
@@ -52,9 +52,13 @@ class UserRepository
                   'password' => Hash::make($request->password),
                   'name' => $request->name,
                   'gender' => $request->gender,
-                  'phone_number' => $request->phone_number,
+                  'phone' => $request->phone,
+                  'user_group' => $request->user_group,
+                  'platform' => $request->platform,
+                  'role' => $request->role,
                   'user_group' => "user",
                   'active' => 0
+
                 ]);
 
                 if (!$user) {

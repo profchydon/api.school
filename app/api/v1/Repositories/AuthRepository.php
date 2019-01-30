@@ -67,37 +67,17 @@ class AuthRepository
             // Get the current date
             $date = Carbon::now();
 
-            // Create a random key as api_key for the User
+            // Create a random key as auth_token for the User
             $hash = Hash::make($date);
-            $apikey = str_random(100);
+            $auth_token = str_random(100);
 
-            // Update api_key in the user table for the particular user
-            User::where('email', $request->email)->update(['api_key' => $apikey]);
+            // Update auth_token in the user table for the particular user
+            User::where('email', $request->email)->update(['auth_token' => $auth_token]);
 
             $user = User::whereEmail($request->email)->first();
 
-            // // Fetch the cotenant details
-            // $cotenant = Cotenant::where('user_id', $user->id)->first();
-            //
-            // // Fetch the cotenant's accept details
-            // $accepts = Accept::where('cotenant_id' , $cotenant->id)->get();
-            //
-            // // Fetch the cotenant's transaction details
-            // $transactions = Transaction::where('cotenant_id' , $cotenant->id)->get();
-            //
-            // // Fetch the cotenant's visit details
-            // $visit = Visit::where('cotenant_id' , $cotenant->id)->get();
-            //
-            // // Fetch the cotenant's interest details
-            // $interest = Interest::where('cotenant_id' , $cotenant->id)->get();
-
             $data['user'] = $user;
-            // $data['cotenant'] = $cotenant;
-            // $data['accepts'] = $accepts;
-            // $data['transactions'] = $transactions;
-            // $data['interest'] = $interest;
-            // $data['visit'] = $visit;
-
+        
             return $data;
 
         }
