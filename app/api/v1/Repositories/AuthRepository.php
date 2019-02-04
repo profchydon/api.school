@@ -77,7 +77,7 @@ class AuthRepository
             $user = User::whereEmail($request->email)->first();
 
             $data['user'] = $user;
-        
+
             return $data;
 
         }

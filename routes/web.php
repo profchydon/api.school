@@ -50,5 +50,25 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('create' , 'AccessGroupController@create');
     });
 
+    // User Card route
+    Route::group(['prefix' => 'usercard'], function () {
+        Route::post('create' , 'UserCardController@create');
+    });
+
+    // User Group route
+    Route::group(['prefix' => 'usergroup'], function () {
+        Route::post('create' , 'UserGroupController@create');
+    });
+
+    // User Payment route
+    Route::group(['prefix' => 'userpayment'], function () {
+        Route::post('create' , 'UserPaymentController@create');
+    });
+
+    // User Device route
+    Route::group(['prefix' => 'userdevice'], function () {
+        Route::post('create' , 'UserDeviceController@create');
+        Route::get('platform/{platform}' , 'UserDeviceController@getDeviceByPlatform');
+    });
 
 });
