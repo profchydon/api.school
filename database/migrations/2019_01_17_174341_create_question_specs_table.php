@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionsSpecsTable extends Migration
+class CreateQuestionSpecsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateQuestionsSpecsTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions_specs', function (Blueprint $table) {
+        Schema::create('question_specs', function (Blueprint $table) {
           $table->increments('id');
           $table->string('header')->nullable();
           $table->string('requirements')->nullable();
@@ -31,6 +31,6 @@ class CreateQuestionsSpecsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions_specs');
+        Schema::dropIfExists('question_specs');
     }
 }

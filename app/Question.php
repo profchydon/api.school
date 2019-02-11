@@ -18,15 +18,7 @@ class Question extends Model implements AuthenticatableContract, AuthorizableCon
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'platform', 'phone', 'gender', 'user_group', 'role', 'auth_token', 'auth_expiry', 'active',
+        'spec_id', 'statement', 'label', 'answer_type', 'validation',
     ];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-    ];
 }

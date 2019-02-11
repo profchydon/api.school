@@ -96,9 +96,14 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('create' , 'UserScholarshipController@create');
     });
 
-    // Questipn Spec route
+    // Question Spec route
     Route::group(['prefix' => 'questionspec'], function () {
         Route::post('create' , 'QuestionSpecController@create');
+    });
+
+    // Question route
+    Route::group(['prefix' => 'question'], function () {
+        Route::post('create' , 'QuestionController@create');
     });
 
 });

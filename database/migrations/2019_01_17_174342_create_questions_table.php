@@ -21,7 +21,7 @@ class CreateQuestionsTable extends Migration
           $table->string('answer_type')->nullable();
           $table->string('validation')->nullable();
           $table->timestamps();
-          $table->foreign('spec_id')->references('id')->on('questions_specs');
+          $table->foreign('spec_id')->references('id')->on('question_specs');
         });
     }
 
