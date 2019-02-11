@@ -106,4 +106,14 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('create' , 'QuestionController@create');
     });
 
+    // Question route
+    Route::group(['prefix' => 'answer'], function () {
+        Route::post('create' , 'AnswerController@create');
+    });
+
+    // Question route
+    Route::group(['prefix' => 'blog'], function () {
+        Route::post('create' , 'BlogController@create');
+    });
+
 });
