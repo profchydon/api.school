@@ -65,10 +65,30 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('create' , 'UserPaymentController@create');
     });
 
+    // User Profile route
+    Route::group(['prefix' => 'userprofile'], function () {
+        Route::post('create' , 'UserProfileController@create');
+    });
+
     // User Device route
     Route::group(['prefix' => 'userdevice'], function () {
         Route::post('create' , 'UserDeviceController@create');
         Route::get('platform/{platform}' , 'UserDeviceController@getDeviceByPlatform');
+    });
+
+    // THird Party route
+    Route::group(['prefix' => 'thirdparty'], function () {
+        Route::post('create' , 'ThirdPartyController@create');
+    });
+
+    // Sponsor route
+    Route::group(['prefix' => 'sponsor'], function () {
+        Route::post('create' , 'SponsorController@create');
+    });
+
+    // Scholarship route
+    Route::group(['prefix' => 'scholarship'], function () {
+        Route::post('create' , 'ScholarshipController@create');
     });
 
 });

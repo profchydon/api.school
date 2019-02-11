@@ -18,15 +18,8 @@ class Scholarship extends Model implements AuthenticatableContract, Authorizable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone_number', 'user_group', 'active', 'api_key',
+        'sponsor_id', 'name', 'faculty', 'college', 'department', 'state', 'website', 'course' , 'cgpa' , 'deadline' , 'school' , 'award' , 'major' , 'country' , 'gender' , 'minimum_subscription_grade' , 'category' , 'dated_deadline',
+        'yearly' , 'last_accessed' , 'access_count' , 'amount_award' , 'award_currency' , 'description' , 'approved_at' , 'meta_data' , 'image_url' , 'commence_date',
     ];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'api_key',
-    ];
 }

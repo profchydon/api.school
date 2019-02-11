@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
-class FundingRequest extends Model implements AuthenticatableContract, AuthorizableContract
+class ThirdParty extends Model implements AuthenticatableContract, AuthorizableContract
 {
     use Authenticatable, Authorizable;
 
@@ -18,7 +18,7 @@ class FundingRequest extends Model implements AuthenticatableContract, Authoriza
      * @var array
      */
     protected $fillable = [
-        'student_id', 'title', 'image', 'amount_needed', 'amount_raised', 'details', 'end_date', 'start_date',
+        'name', 'allow_urls', 'deny_urls', 'domains' , 'secret' , 'accepted' , 'encrypted_secret' , 'description' ,
     ];
 
 }

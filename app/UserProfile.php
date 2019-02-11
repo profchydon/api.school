@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
-class Sponsor extends Model implements AuthenticatableContract, AuthorizableContract
+class UserProfile extends Model implements AuthenticatableContract, AuthorizableContract
 {
     use Authenticatable, Authorizable;
 
@@ -18,7 +18,7 @@ class Sponsor extends Model implements AuthenticatableContract, AuthorizableCont
      * @var array
      */
     protected $fillable = [
-        'user_id', 'third_party_id', 'name', 'picture', 'title', 'email', 'phone', 'is_anonymous' , 'comments',
+        'user_id', 'allow_push', 'image', 'state' , 'country' , 'city' , 'currency' , 'zip_code' , 'address_line1' , 'address_line2' ,
     ];
 
 }
