@@ -91,4 +91,9 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('create' , 'ScholarshipController@create');
     });
 
+    // UserScholarship route
+    Route::group(['prefix' => 'userscholarship'], function () {
+        Route::post('create' , 'UserScholarshipController@create');
+    });
+
 });
