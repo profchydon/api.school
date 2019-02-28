@@ -14,8 +14,13 @@ class CreateScholarshipRequirementResponsesTable extends Migration
     public function up()
     {
         Schema::create('scholarship_requirement_responses', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->integer('number_value')->nullable();
+          $table->string('string_value')->nullable();
+          $table->integer('application_id')->nullable();
+          $table->integer('requirement_id')->unique();
+          $table->integer('score')->nullable();
+          $table->timestamps();
         });
     }
 

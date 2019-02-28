@@ -15,6 +15,11 @@ class CreateVillageCommentsTable extends Migration
     {
         Schema::create('village_comments', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('commenter_id')->nullable();
+            $table->integer('application_id')->nullable();
+            $table->integer('profile_id')->nullable();
+            $table->string('message')->nullable();
+            $table->integer('replies_to')->nullable();
             $table->timestamps();
         });
     }

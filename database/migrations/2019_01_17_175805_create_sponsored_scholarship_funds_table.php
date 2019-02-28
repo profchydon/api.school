@@ -15,6 +15,9 @@ class CreateSponsoredScholarshipFundsTable extends Migration
     {
         Schema::create('sponsored_scholarship_funds', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('amount')->nullable();
+            $table->string('notes')->nullable();
+            $table->integer('application_id')->nullable();
             $table->timestamps();
         });
     }

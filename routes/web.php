@@ -91,9 +91,34 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('create' , 'ScholarshipController@create');
     });
 
-    // UserScholarship route
-    Route::group(['prefix' => 'userscholarship'], function () {
-        Route::post('create' , 'UserScholarshipController@create');
+    // Scholarship route
+    Route::group(['prefix' => 'scholarship'], function () {
+        Route::post('create' , 'ScholarshipController@create');
+    });
+
+    // Scholarship Sponsor route
+    Route::group(['prefix' => 'scholarshipsponsor'], function () {
+        Route::post('create' , 'ScholarshipSponsorController@create');
+    });
+
+    // School route
+    Route::group(['prefix' => 'school'], function () {
+        Route::post('create' , 'SchoolController@create');
+    });
+
+    // Scholarship Collection route
+    Route::group(['prefix' => 'scholarshipcollection'], function () {
+        Route::post('create' , 'ScholarshipCollectionController@create');
+    });
+
+    // Scholarship Requirement route
+    Route::group(['prefix' => 'scholarshiprequirement'], function () {
+        Route::post('create' , 'ScholarshipRequirementController@create');
+    });
+
+    // Scholarship Requirement route
+    Route::group(['prefix' => 'scholarshiprequirementresponse'], function () {
+        Route::post('create' , 'ScholarshipRequirementResponseController@create');
     });
 
     // Question Spec route
@@ -106,14 +131,44 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::post('create' , 'QuestionController@create');
     });
 
-    // Question route
+    // Answer route
     Route::group(['prefix' => 'answer'], function () {
         Route::post('create' , 'AnswerController@create');
     });
 
-    // Question route
+    // Blog route
     Route::group(['prefix' => 'blog'], function () {
         Route::post('create' , 'BlogController@create');
+    });
+
+    // College route
+    Route::group(['prefix' => 'college'], function () {
+        Route::post('create' , 'CollegeController@create');
+    });
+
+    // Contact route
+    Route::group(['prefix' => 'contact'], function () {
+        Route::post('create' , 'ContactController@create');
+    });
+
+    // Course route
+    Route::group(['prefix' => 'course'], function () {
+        Route::post('create' , 'CourseController@create');
+    });
+
+    // Faculty route
+    Route::group(['prefix' => 'faculty'], function () {
+        Route::post('create' , 'FacultyController@create');
+    });
+
+    // Oauth route
+    Route::group(['prefix' => 'oauth'], function () {
+        Route::post('create' , 'OauthController@create');
+    });
+
+    // Payment Records route
+    Route::group(['prefix' => 'paymentrecord'], function () {
+        Route::post('create' , 'PaymentRecordController@create');
     });
 
 });

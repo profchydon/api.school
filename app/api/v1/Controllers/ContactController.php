@@ -5,26 +5,26 @@ namespace App\Api\v1\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
-use App\Api\v1\Repositories\UserCardRepository;
+use App\Api\v1\Repositories\ContactRepository;
 
 
-class UserCardController extends Controller
+class ContactController extends Controller
 {
   /**
    * The User
    *
    * @var object
    */
-  private $user_card;
+  private $contact;
 
   /**
    * Class constructor
    */
-  public function __construct(UserCardRepository $user_card)
+  public function __construct(ContactRepository $contact)
   {
-      // Inject UserRepository Class into UserController
-      $this->user_card = $user_card;
-      $this->middleware('auth', ['except' => []]);
+
+      $this->contact = $contact;
+      $this->middleware('auth', ['except' => ['create']]);
 
       $auth = Auth::user();
 
@@ -41,16 +41,16 @@ class UserCardController extends Controller
   public function create (Request $request)
   {
       // Call the create method of UserRepository
-      $user_card = $this->user_card->create($request);
+      $contact = $this->contact->create($request);
 
-      if ($user_card) {
+      if ($contact) {
 
         // Create a custom array as response
         $response = [
             "status" => "success",
             "code" => 200,
             "message" => "Ok",
-            "data" => $user_card
+            "data" => $contact
         ];
 
         // return the custom in JSON format
@@ -64,8 +64,6 @@ class UserCardController extends Controller
       return response()->json($response);
 
   }
-
-
 
 }
 

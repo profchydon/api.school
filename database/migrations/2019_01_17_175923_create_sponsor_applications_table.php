@@ -15,7 +15,17 @@ class CreateSponsorApplicationsTable extends Migration
     {
         Schema::create('sponsor_applications', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('academic_profile_id')->unsigned();
+            $table->decimal('total_fund')->nullable();
+            $table->date('maximum_date_required')->nullable();
+            $table->decimal('amount')->nullable();
+            $table->text('story')->nullable();
+            $table->string('short_story')->nullable();
+            $table->integer('status')->nullable();
+            $table->string('video_url')->nullable();
+            $table->integer('is_private')->nullable();
             $table->timestamps();
+            $table->foreign('academic_profile_id')->references('id')->on('academic_profiles');
         });
     }
 

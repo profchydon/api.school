@@ -14,8 +14,13 @@ class CreateScholarshipCollectionsTable extends Migration
     public function up()
     {
         Schema::create('scholarship_collections', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->string('name')->nullable();
+          $table->text('description')->nullable();
+          $table->string('image_url')->nullable();
+          $table->integer('repeats')->unique();
+          $table->string('pub_id')->nullable();
+          $table->timestamps();
         });
     }
 

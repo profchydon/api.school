@@ -15,10 +15,13 @@ class CreateStudentDiscountsTable extends Migration
     {
         Schema::create('student_discounts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('url')->nullable();
+            $table->string('description')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

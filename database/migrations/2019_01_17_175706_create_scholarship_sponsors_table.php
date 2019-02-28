@@ -14,8 +14,15 @@ class CreateScholarshipSponsorsTable extends Migration
     public function up()
     {
         Schema::create('scholarship_sponsors', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->string('name')->nullable();
+          $table->string('logo')->nullable();
+          $table->text('full_description')->nullable();
+          $table->string('website')->nullable();
+          $table->string('banner_image_url')->nullable();
+          $table->decimal('amount')->nullable();
+          $table->string('country')->nullable();
+          $table->timestamps();
         });
     }
 
